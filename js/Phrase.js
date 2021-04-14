@@ -10,6 +10,25 @@ class Phrase {
 /**
  * Display phrase on game board
  */
+
+ addPhraseToDisplay() {
+    const phraseElement = document.querySelector('#phrase ul');
+    for (let i = 0; i < this.phrase.length; i++) {
+        if (this.phrase.charAt(i) === ' ') {
+            phraseElement.append('<li class="space">'  + this.phrase.charAt(i) + '</li>');
+        } else {
+            phraseElement.append('<li class="hide letter' + ` ${this.phrase.charAt(i)}">` + this.phrase.charAt(i) + '</li>');
+        }
+
+    }
+    console.log(phraseElement);
+    //phraseElement.innerHTML = ;
+    return phraseElement;
+    }
+
+}
+
+
     // addPhraseToDisplay() {
     //     //select phrase div to insert phrase in HTML
     //     const ul = document.querySelector('#phrase ul');
@@ -43,20 +62,4 @@ class Phrase {
     //     return liPhrase;
     // }
 
-    addPhraseToDisplay() {
-        const phraseElement = document.querySelector('#phrase ul');
-        for (let i = 0; i < this.phrase.length; i++) {
-            if (this.phrase.charAt(i) === ' ') {
-                phraseElement.append('<li class="space">'  + this.phrase.charAt(i) + '</li>');
-            } else {
-                phraseElement.append('<li class="hide letter' + ` ${this.phrase.charAt(i)}">` + this.phrase.charAt(i) + '</li>');
-            }
-        }
-        console.log(phraseElement);
-        return phraseElement;
-    }
-
-
-
-
-}
+    

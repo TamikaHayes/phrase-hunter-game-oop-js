@@ -35,5 +35,19 @@ class Game {
         let randomPhrase = phrases[randomIndex];
         return randomPhrase;
     }
-    //getRandomPhrase(phrases);
+
+/**
+ * Begins game by selecting a random phrase and displaying it to user
+ */
+    startGame() {
+        const overlay = document.querySelector('#overlay');
+        overlay.style.display = 'none';
+        //set the activePhrase property to a random phrase
+        this.activePhrase = this.getRandomPhrase(this.phrases);
+        console.log(this.activePhrase);
+        //call the addPhraseToDisplay() method (which is in the Phrase object) on the active phrase
+        this.activePhrase.addPhraseToDisplay();
+        
+    }
+
 }
