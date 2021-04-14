@@ -46,7 +46,7 @@ class Phrase {
     addPhraseToDisplay() {
         const phraseElement = document.querySelector('#phrase ul');
         for (let i = 0; i < this.phrase.length; i++) {
-            if (this.phrase.charAt(i) === '') {
+            if (this.phrase.charAt(i) === ' ') {
                 phraseElement.append('<li class="space">'  + this.phrase.charAt(i) + '</li>');
             } else {
                 phraseElement.append('<li class="hide letter' + ` ${this.phrase.charAt(i)}">` + this.phrase.charAt(i) + '</li>');
