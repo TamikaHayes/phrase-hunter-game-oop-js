@@ -31,8 +31,8 @@ class Game {
  */
     getRandomPhrase(phrases) {
         phrases = this.phrases;
-        let randomNum = Math.floor(Math.random()*(phrases.length));
-        let randomPhrase = phrases[randomNum];
+        let randomIndex = Math.floor(Math.random()*(phrases.length));
+        let randomPhrase = phrases[randomIndex];
         return randomPhrase;
     }
     //getRandomPhrase(phrases);
