@@ -14,19 +14,42 @@ class Phrase {
  addPhraseToDisplay() {
     const phraseElement = document.querySelector('#phrase ul');
     for (let i = 0; i < this.phrase.length; i++) {
-        if (this.phrase.charAt(i) === ' ') {
-            phraseElement.append('<li class="space">'  + this.phrase.charAt(i) + '</li>');
+        const liPhrase = document.createElement('li');
+        if (this.phrase[i] === ' ') {
+            //console.log(this.phrase[i]);
+            liPhrase.classList.add('space');
+            liPhrase.textContent = this.phrase.charAt(i);
         } else {
-            phraseElement.append('<li class="hide letter' + ` ${this.phrase.charAt(i)}">` + this.phrase.charAt(i) + '</li>');
+            liPhrase.classList.add('hide') ;
+            liPhrase.classList.add('letter');
+            liPhrase.classList.add(`${this.phrase.charAt(i)}`);
+            liPhrase.textContent = this.phrase.charAt(i);
         }
-
+            phraseElement.append(liPhrase); 
+            console.log(liPhrase);  
     }
     console.log(phraseElement);
-    //phraseElement.innerHTML = ;
-    return phraseElement;
+    
     }
 
 }
+
+
+// addPhraseToDisplay() {
+//     const phraseElement = document.querySelector('#phrase ul');
+//     for (let i = 0; i < this.phrase.length; i++) {
+//         if (this.phrase.charAt(i) === ' ') {
+//             phraseElement.append(`<li class="space">  ${this.phrase.charAt(i)} </li>`);
+//         } else {
+//             phraseElement.append(`<li class="hide letter ${this.phrase.charAt(i)}">  ${this.phrase.charAt(i)} </li>`);
+//         }
+
+//     }
+//     console.log(phraseElement);
+//     //document.innerHTML = phraseElement;
+//     //return phraseElement;
+//     }
+
 
 
     // addPhraseToDisplay() {
