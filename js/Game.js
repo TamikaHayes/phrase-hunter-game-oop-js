@@ -33,7 +33,7 @@ class Game {
         const gamePhrases = this.phrases;
         const randomIndex = Math.floor(Math.random()*(gamePhrases.length));
         const randomPhrase = gamePhrases[randomIndex];
-        this.activePhrase = randomPhrase.phrase; // OR this.activePhrase = randomPhrase;
+        this.activePhrase = randomPhrase;
         console.log(this.activePhrase);
         return this.activePhrase;
     }
@@ -45,7 +45,7 @@ class Game {
         const overlay = document.querySelector('#overlay');
         overlay.style.display = 'none';
         //set the activePhrase property to a random phrase
-        this.activePhrase = this.getRandomPhrase();
+        this.activePhrase = this.getRandomPhrase().phrase;
         //this.activePhrase = String(this.activePhrase);
         console.log(this.activePhrase);
         //call the addPhraseToDisplay() method (which is in the Phrase object) on the active phrase
