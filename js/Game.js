@@ -45,18 +45,19 @@ class Game {
         const overlay = document.querySelector('#overlay');
         overlay.style.display = 'none';
         //set the activePhrase property to a random phrase
-        this.activePhrase = this.getRandomPhrase().phrase;
+        this.activePhrase = this.getRandomPhrase();
         //this.activePhrase = String(this.activePhrase);
         console.log(this.activePhrase);
-        //call the addPhraseToDisplay() method (which is in the Phrase object) on the active phrase
+        //call the addPhraseToDisplay() method (which is in the Phrase class) on the active phrase
         this.activePhrase.addPhraseToDisplay();
+
     }
 
 /**
  * Handles logic and branching for user interactions with the game
  */   
-//     handleInteraction() {
-
-//     }
+    handleInteraction() {
+        
+    }
 
  }
