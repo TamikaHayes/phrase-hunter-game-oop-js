@@ -13,6 +13,6 @@ let game;
 const button = document.querySelector('#btn__reset');
 
 button.addEventListener('click',(e) => {
-    game = new Game;
+    game = new Game();
     game.startGame();
 });

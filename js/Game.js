@@ -7,7 +7,7 @@ class Game {
         this.missed = 0;
         this.phrases = this.createPhrases();
         this.activePhrase = null;
-        this.randomPhrase = this.getRandomPhrase();
+        //this.randomPhrase = this.getRandomPhrase();
     }
 /**
  * Creates phrases for use in game
@@ -30,10 +30,12 @@ class Game {
  * @return  {Object}    Phrase object chosen to be used
  */
     getRandomPhrase(phrases) {
-        phrases = this.phrases;
-        let randomIndex = Math.floor(Math.random()*(phrases.length));
-        let randomPhrase = phrases[randomIndex];
-        return randomPhrase;
+        const gamePhrases = this.phrases;
+        const randomIndex = Math.floor(Math.random()*(gamePhrases.length));
+        const randomPhrase = gamePhrases[randomIndex];
+        this.activePhrase = randomPhrase.phrase; // OR this.activePhrase = randomPhrase;
+        console.log(this.activePhrase);
+        return this.activePhrase;
     }
 
 /**
@@ -43,11 +45,18 @@ class Game {
         const overlay = document.querySelector('#overlay');
         overlay.style.display = 'none';
         //set the activePhrase property to a random phrase
-        this.activePhrase = this.getRandomPhrase(this.phrases);
-        //console.log(this.activePhrase);
+        this.activePhrase = this.getRandomPhrase();
+        //this.activePhrase = String(this.activePhrase);
+        console.log(this.activePhrase);
         //call the addPhraseToDisplay() method (which is in the Phrase object) on the active phrase
         this.activePhrase.addPhraseToDisplay();
-        
     }
 
-}
+/**
+ * Handles logic and branching for user interactions with the game
+ */   
+//     handleInteraction() {
+
+//     }
+
+ }
