@@ -50,6 +50,23 @@ class Phrase {
         // }
     }
 
+ /**
+  * Displays passed letter on screen after a match is found
+  * @param  {string} letter - Letter to check
+ */   
+    showMatchedLetter(letter) {
+        //select <li> elements that have the hide class (all hidden letters in phrase)
+        const phraseLetters = document.querySelectorAll('.hide');
+        for (let i = 0; i < phraseLetters.length; i++) {
+            //if the text content of the <li> matches the user's chosen letter, show letter on board
+            if (phraseLetters[i].textContent === letter) {
+                //console.log(this.phrase[i].textContent);
+                phraseLetters[i].classList.remove('hide');
+                phraseLetters[i].classList.add('show');
+            }    
+        }
+    }
+
 }
 
 
