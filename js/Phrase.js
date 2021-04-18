@@ -40,14 +40,7 @@ class Phrase {
  * @param   (string)    letter - Letter to check
  */
     checkLetter(letter) {  
-        return (this.phrase.includes(letter)) 
-        // for (let i = 0; i < this.phrase.length; i++) {
-        //     if (this.phrase[i] === 'letter') {
-        //         letter = true;
-        //     } else {
-        //         letter = false;
-        //     }
-        // }
+        return (this.phrase.includes(letter)); 
     }
 
  /**

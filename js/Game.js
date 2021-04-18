@@ -40,13 +40,13 @@ class Game {
 
 /**
  * Begins game by selecting a random phrase and displaying it to user
+ * The random phrase is a Phrase object
  */
     startGame() {
         const overlay = document.querySelector('#overlay');
         overlay.style.display = 'none';
         //set the activePhrase property to a random phrase
         this.activePhrase = this.getRandomPhrase();
-        //this.activePhrase = String(this.activePhrase);
         console.log(this.activePhrase);
         //call the addPhraseToDisplay() method (which is in the Phrase class) on the active phrase
         this.activePhrase.addPhraseToDisplay();
@@ -59,5 +59,15 @@ class Game {
     handleInteraction() {
         
     }
+
+/**Checks for winning move
+ * @return {boolean} True if game has been won, false if game wasn't won
+ */
+    checkForWin() {
+        //check to see if any hidden letters are on the game board; if no hidden letters, return false
+        const hiddenLetters = document.querySelectorAll('.hide');
+        return (!hiddenLetters.length);
+    }
+
 
  }
