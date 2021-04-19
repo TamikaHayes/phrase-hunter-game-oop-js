@@ -54,15 +54,21 @@ class Game {
     }
 
 /**
+ * Handles onscreen keyboard button clicks
+ * @param (HTMLButtonElement) button - The clicked button element
  * Handles logic and branching for user interactions with the game
  */   
-    handleInteraction() {
+    handleInteraction(button) {
+        console.log(button);
+        //disable selected letter's onscreen keyboard button
         //if (this.activePhrase.checkLetter()) {
+            //add 'chosen' CSS class to the selected letter's onscreen keyboard button
             //this.activePhrase.showMatchedLetter(letter);
                 //if (this.checkforWin()) {
                     //this.gameOver(gameWon)
                 //}
         //} else {
+            //add the 'wrong' CSS class to the selected letter's keyboard button
             //this.removeLife();
         //}
 
@@ -109,7 +115,18 @@ class Game {
             message.insertAdjacentHTML('afterend', "<h1>Sorry, better luck next time!</h1>");
             overlay.classList.add('lose');
         }
+        //this.resetGame();
         return gameWon;
     }
+
+/**
+ * Resets game
+ * Removes all <li> elements from Phrase <ul> element
+ * Enables all onscreen keyboard buttons, and updates each with 'key' CSS class (removing 'chosen' or 'wrong' CSS class)
+ * Resets all heart images for scoreboard to display 'liveHeart.png' image
+ */
+    //resetGame() {
+
+    //}
 
  }

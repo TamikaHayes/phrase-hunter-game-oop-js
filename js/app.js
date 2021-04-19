@@ -18,7 +18,15 @@ button.addEventListener('click',(e) => {
 });
 
 // keyboard interaction/ addEventListener
-//handleInteraction()
+const keyboard = document.querySelector('#qwerty').addEventListener('click', (e) => {
+    if (e.target.className === 'key') {
+        console.log('Click!');
+        game.handleInteraction(e.target);
+    }
+    
+});
+    
+
 
 //resetting the game - clicking Start Gane button loads a new game
 //add or change class names, restore hearts, remove phrase
