@@ -57,7 +57,12 @@ class Game {
  * Handles logic and branching for user interactions with the game
  */   
     handleInteraction() {
-        
+        //if (checkLetter()) {
+            //showMatchedLetter(letter);
+        //} else {
+            //removeLife();
+        //}
+
     }
 
 /**Checks for winning move
@@ -69,5 +74,24 @@ class Game {
         return (!hiddenLetters.length);
     }
 
+/**
+ * Increases the value of the missed property
+ * Removes a life from the scoreboard
+ * Checks if player has remaining lives and ends game if player is out of lives
+ */
+    removeLife() {
+        this.missed++;
+        console.log(this.missed);
+        let heart = document.querySelector("img[src='images/liveHeart.png']");
+            if (this.missed <= 4) {
+                heart.src = 'images/lostHeart.png';
+            }  else if (this.missed > 4) {
+                this.gameOver(); 
+            }   
+    }
+
+    // gameOver() {
+
+    // }
 
  }
