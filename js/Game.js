@@ -61,16 +61,19 @@ class Game {
     handleInteraction(button) {
         console.log(button);
         //disable selected letter's onscreen keyboard button
-        //if (this.activePhrase.checkLetter()) {
+        button.classList.add('disabled');
+        if (this.activePhrase.checkLetter(button.textContent)) {
             //add 'chosen' CSS class to the selected letter's onscreen keyboard button
-            //this.activePhrase.showMatchedLetter(letter);
-                //if (this.checkforWin()) {
-                    //this.gameOver(gameWon)
-                //}
-        //} else {
+            button.classList.add('chosen');
+            this.activePhrase.showMatchedLetter(button.textContent);
+                if (this.checkForWin()) {
+                    this.gameOver(true);
+                }
+        } else {
             //add the 'wrong' CSS class to the selected letter's keyboard button
-            //this.removeLife();
-        //}
+            button.classList.add('wrong');
+            this.removeLife();
+        }
 
     }
 
