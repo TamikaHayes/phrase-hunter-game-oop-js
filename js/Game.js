@@ -89,9 +89,13 @@ class Game {
                 this.gameOver(); 
             }   
     }
-
-    // gameOver() {
-
-    // }
+/**
+ * Displays game over message
+ * @param {boolean} gameWon - Whether or not the user won the game
+ */
+    gameOver(gameWon) {
+        const overlay = document.querySelector('#overlay');
+        overlay.style.display = 'flex';
+    }
 
  }
