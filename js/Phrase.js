@@ -20,7 +20,7 @@ class Phrase {
             liPhrase.classList.add('space');
             liPhrase.textContent = this.phrase.charAt(i);
         } else {
-            liPhrase.classList.add('hide') ;
+            liPhrase.classList.add('hide');
             liPhrase.classList.add('letter');
             liPhrase.classList.add(`${this.phrase.charAt(i)}`);
             liPhrase.textContent = this.phrase.charAt(i);

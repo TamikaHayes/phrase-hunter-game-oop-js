@@ -57,10 +57,13 @@ class Game {
  * Handles logic and branching for user interactions with the game
  */   
     handleInteraction() {
-        //if (checkLetter()) {
-            //showMatchedLetter(letter);
+        //if (this.activePhrase.checkLetter()) {
+            //this.activePhrase.showMatchedLetter(letter);
+                //if (this.checkforWin()) {
+                    //this.gameOver(gameWon)
+                //}
         //} else {
-            //removeLife();
+            //this.removeLife();
         //}
 
     }
@@ -69,7 +72,7 @@ class Game {
  * @return {boolean} True if game has been won, false if game wasn't won
  */
     checkForWin() {
-        //check to see if any hidden letters are on the game board; if no hidden letters, return false
+        //check to see if any hidden letters are on the game board; if no hidden letters, return true
         const hiddenLetters = document.querySelectorAll('.hide');
         return (!hiddenLetters.length);
     }
@@ -95,7 +98,18 @@ class Game {
  */
     gameOver(gameWon) {
         const overlay = document.querySelector('#overlay');
+        const message = document.querySelector("#game-over-message");
         overlay.style.display = 'flex';
+        if (this.checkForWin() === true) {
+            gameWon === true;
+            message.insertAdjacentHTML('afterend', "<h1>Great job! You're a phrase champion!</h1>");
+            overlay.classList.add('win');
+        } else {
+            gameWon === false;
+            message.insertAdjacentHTML('afterend', "<h1>Sorry, better luck next time!</h1>");
+            overlay.classList.add('lose');
+        }
+        return gameWon;
     }
 
  }
