@@ -32,9 +32,7 @@ class Game {
         const gamePhrases = this.phrases;
         const randomIndex = Math.floor(Math.random()*(gamePhrases.length));
         const randomPhrase = gamePhrases[randomIndex];
-        this.activePhrase = randomPhrase;
-        //console.log(this.activePhrase);
-        return this.activePhrase;
+        return randomPhrase;
     }
 
 /**
