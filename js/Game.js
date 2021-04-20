@@ -107,19 +107,25 @@ class Game {
  */
     gameOver(gameWon) {
         const overlay = document.querySelector('#overlay');
-        const message = document.querySelector("#game-over-message");
+        let message = document.querySelector("#game-over-message");
         overlay.style.display = 'flex';
         if (this.checkForWin() === true) {
             gameWon === true;
-            message.insertAdjacentHTML('afterend', "<h1>Great job! You're a phrase champion!</h1>");
+            message.textContent = "Great job! You're a phrase champion!"
+            //message.insertAdjacentHTML('afterend', "<h1>Great job! You're a phrase champion!</h1>");
             overlay.classList.add('win');
+            //remove overlay color from any previous round of the game
+            overlay.classList.remove('lose');
+            this.resetGame();
         } else {
             gameWon === false;
-            message.insertAdjacentHTML('afterend', "<h1>Sorry, better luck next time!</h1>");
+            message.textContent = "Sorry, better luck next time!"
+            //message.insertAdjacentHTML('afterend', "<h1>Sorry, better luck next time!</h1>");
             overlay.classList.add('lose');
+            //remove overlay color from any previous round of the game
+            overlay.classList.remove('win');
+            this.resetGame();
         }
-        this.resetGame();
-        return gameWon;
     }
 
 /**
@@ -149,6 +155,7 @@ class Game {
         for (let i = 0; i < resetHearts.length; i++) {
             resetHearts[i].setAttribute('src', 'images/liveHeart.png');
         }
+
     }
 
  }
