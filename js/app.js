@@ -10,9 +10,9 @@
 
 let game;
 
-const button = document.querySelector('#btn__reset');
+const startButton = document.querySelector('#btn__reset');
 
-button.addEventListener('click',(e) => {
+startButton.addEventListener('click',(e) => {
     game = new Game();
     game.startGame();
 });

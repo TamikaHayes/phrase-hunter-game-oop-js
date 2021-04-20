@@ -13,6 +13,7 @@ class Phrase {
 
  addPhraseToDisplay() {
     const phraseElement = document.querySelector('#phrase ul');
+    console.log(phraseElement);
     for (let i = 0; i < this.phrase.length; i++) {
         const liPhrase = document.createElement('li');
         if (this.phrase[i] === ' ') {
@@ -25,8 +26,9 @@ class Phrase {
             liPhrase.classList.add(`${this.phrase.charAt(i)}`);
             liPhrase.textContent = this.phrase.charAt(i);
         }
+            console.log(liPhrase); 
             phraseElement.append(liPhrase); 
-            //console.log(liPhrase);  
+             
     }
     console.log(phraseElement);
     console.log(this.phrase);

@@ -118,7 +118,7 @@ class Game {
             message.insertAdjacentHTML('afterend', "<h1>Sorry, better luck next time!</h1>");
             overlay.classList.add('lose');
         }
-        //this.resetGame();
+        this.resetGame();
         return gameWon;
     }
 
@@ -128,8 +128,38 @@ class Game {
  * Enables all onscreen keyboard buttons, and updates each with 'key' CSS class (removing 'chosen' or 'wrong' CSS class)
  * Resets all heart images for scoreboard to display 'liveHeart.png' image
  */
-    //resetGame() {
-
-    //}
+    resetGame() {
+        //const ul = document.querySelector('#phrase ul');
+        const finishedGamePhrase = document.querySelectorAll('#phrase li');
+        console.log(finishedGamePhrase);
+        finishedGamePhrase.forEach(li => {
+            li.parentNode.removeChild(li);
+        })
+        
+        //finishedGamePhrase.remove(li);
+        //call this.startGame() ???
+        let finishedGameKeys = document.querySelectorAll('#qwerty button');
+        console.log(finishedGameKeys);
+        // for (const letters of finishedGameKeys) {
+        //     let newKeys = letters.children;
+        //     console.log(newKeys);
+        //     for (const element of newKeys) {
+        //         element.className = 'key';
+        //         element.removeAttribute('disabled');
+        //     }
+        // }
+        finishedGameKeys.forEach(button => {
+            button.classList.remove('disabled');
+            button.classList.remove('chosen');
+            button.classList.remove('wrong');
+            // if (element.classList.includes('chosen')) {
+            //     
+            // }
+            // if (element.classList.includes('wrong')) {
+            //     
+            // }
+        });
+        
+    }
 
  }
