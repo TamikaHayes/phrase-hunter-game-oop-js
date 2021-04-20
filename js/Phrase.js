@@ -13,7 +13,7 @@ class Phrase {
 
  addPhraseToDisplay() {
     const phraseElement = document.querySelector('#phrase ul');
-    console.log(phraseElement);
+    //console.log(phraseElement);
     for (let i = 0; i < this.phrase.length; i++) {
         const liPhrase = document.createElement('li');
         if (this.phrase[i] === ' ') {
@@ -26,15 +26,15 @@ class Phrase {
             liPhrase.classList.add(`${this.phrase.charAt(i)}`);
             liPhrase.textContent = this.phrase.charAt(i);
         }
-            console.log(liPhrase); 
+            //console.log(liPhrase); 
             phraseElement.append(liPhrase); 
              
     }
-    console.log(phraseElement);
-    console.log(this.phrase);
-    console.log(typeof this.phrase);
-    console.log(this.phrase[0]);
-    console.log(this.phrase.includes('a'));
+    // console.log(phraseElement);
+    // console.log(this.phrase);
+    // console.log(typeof this.phrase);
+    // console.log(this.phrase[0]);
+    // console.log(this.phrase.includes('a'));
     }
     
 /**
@@ -50,7 +50,7 @@ class Phrase {
   * @param  {string} letter - Letter to check
  */   
     showMatchedLetter(letter) {
-        //select <li> elements that have the hide class (all hidden letters in phrase)
+        //select <li> elements that have the hide class (all the hidden letters in phrase)
         const phraseLetters = document.querySelectorAll('.hide');
         for (let i = 0; i < phraseLetters.length; i++) {
             //if the text content of the <li> matches the user's chosen letter, show letter on board

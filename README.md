@@ -1,9 +1,9 @@
 # phrase-hunter-game-oop-js
- This browser-based word guessing game, "Phrase Hunter," uses JavaScript and OOP(Object-Oriented Programming) to select a random, hidden phrase. The player tries to gues the phrase by clicking letters on an onscreen keyboard.
+ This browser-based word guessing game, "Phrase Hunter," uses JavaScript and OOP(Object-Oriented Programming) to select a random, hidden phrase. Similar in format to the game show "Wheel of Fortune," the player attemptss to guess the phrase by clicking letters on an onscreen keyboard.
 
 Rules of the Game:
 
---The player’s goal is to guess all the letters in a hidden, random phrase. At the beginning, the player only sees the number of letters and words in the phrase, represented by blank boxes on the screen.
+--The player’s goal is to guess all the letters in a hidden, random phrase. At the beginning, the player only sees the number of letters and words in the phrase, represented by blank boxes on the screen. The player begins with five onscreen hearts, representing five available "tries."
 
 --The player clicks an onscreen keyboard to guess letters in the phrase.
 

@@ -7,7 +7,6 @@ class Game {
         this.missed = 0;
         this.phrases = this.createPhrases();
         this.activePhrase = null;
-        //this.randomPhrase = this.getRandomPhrase();
     }
 /**
  * Creates phrases for use in game
@@ -34,7 +33,7 @@ class Game {
         const randomIndex = Math.floor(Math.random()*(gamePhrases.length));
         const randomPhrase = gamePhrases[randomIndex];
         this.activePhrase = randomPhrase;
-        console.log(this.activePhrase);
+        //console.log(this.activePhrase);
         return this.activePhrase;
     }
 
@@ -47,7 +46,7 @@ class Game {
         overlay.style.display = 'none';
         //set the activePhrase property to a random phrase
         this.activePhrase = this.getRandomPhrase();
-        console.log(this.activePhrase);
+        //console.log(this.activePhrase);
         //call the addPhraseToDisplay() method (which is in the Phrase class) on the active phrase
         this.activePhrase.addPhraseToDisplay();
 
@@ -59,18 +58,16 @@ class Game {
  * Handles logic and branching for user interactions with the game
  */   
     handleInteraction(button) {
-        console.log(button);
+        //console.log(button);
         //disable selected letter's onscreen keyboard button
         button.classList.add('disabled');
         if (this.activePhrase.checkLetter(button.textContent)) {
-            //add 'chosen' CSS class to the selected letter's onscreen keyboard button
             button.classList.add('chosen');
             this.activePhrase.showMatchedLetter(button.textContent);
                 if (this.checkForWin()) {
                     this.gameOver(true);
                 }
         } else {
-            //add the 'wrong' CSS class to the selected letter's keyboard button
             button.classList.add('wrong');
             this.removeLife();
         }
@@ -93,7 +90,7 @@ class Game {
  */
     removeLife() {
         this.missed++;
-        console.log(this.missed);
+        //console.log(this.missed);
         let heart = document.querySelector("img[src='images/liveHeart.png']");
             if (this.missed <= 4) {
                 heart.src = 'images/lostHeart.png';
@@ -112,7 +109,6 @@ class Game {
         if (this.checkForWin() === true) {
             gameWon === true;
             message.textContent = "Great job! You're a phrase champion!"
-            //message.insertAdjacentHTML('afterend', "<h1>Great job! You're a phrase champion!</h1>");
             overlay.classList.add('win');
             //remove overlay color from any previous round of the game
             overlay.classList.remove('lose');
@@ -120,7 +116,6 @@ class Game {
         } else {
             gameWon === false;
             message.textContent = "Sorry, better luck next time!"
-            //message.insertAdjacentHTML('afterend', "<h1>Sorry, better luck next time!</h1>");
             overlay.classList.add('lose');
             //remove overlay color from any previous round of the game
             overlay.classList.remove('win');
@@ -136,7 +131,7 @@ class Game {
  */
     resetGame() {
         const finishedGamePhrase = document.querySelectorAll('#phrase li');
-        console.log(finishedGamePhrase);
+        //console.log(finishedGamePhrase);
         finishedGamePhrase.forEach(li => {
             li.parentNode.removeChild(li);
         });
