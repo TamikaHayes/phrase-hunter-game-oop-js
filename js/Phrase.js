@@ -1,6 +1,9 @@
-/* Treehouse FSJS Techdegree
+/** Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
- * Phrase.js */
+ * Tamika Hayes
+ * April 18, 2021
+ * Phrase.js 
+ * */
 
 class Phrase {
     constructor(phrase) {
